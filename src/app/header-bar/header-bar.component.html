@@ -25,11 +25,11 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="./assets/images/log.jpg" class="img-circle img-responsive" alt=""></a>
 					<ul class="dropdown-menu">
-						<li><a routerLink="/login" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a></li>
-						<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
-						<li><a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> My Media</a></li>
-						<li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Setting</a></li>
-						<li><a href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Sign Out</a></li>
+						<li *ngIf="!this.userSvc.isUserLoggedIn()"><a routerLink="/login" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a></li>
+						<li *ngIf="this.userSvc.isUserLoggedIn()"><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+						<li *ngIf="this.userSvc.isUserLoggedIn()"><a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> My Media</a></li>
+						<li *ngIf="this.userSvc.isUserLoggedIn()"><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Setting</a></li>
+						<li *ngIf="this.userSvc.isUserLoggedIn()"><a href="#"><i class="fa fa-power-off" aria-hidden="true"></i> Sign Out</a></li>
 					</ul>
 				</li>
             </ul>

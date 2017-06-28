@@ -20,6 +20,8 @@
 				
 								<input #rememberMe type="checkbox" id="brand" value="">
 								<label for="brand"><span></span> Remember me?</label>
+
+								<div *ngIf="errorMsg !== undefined;" class="error-msg">{{errorMsg}}</div>
 				
 								<input *ngIf="!loading" type="submit" class="sign-in" value="Submit" (click)="processLogin(username.value, password.value, rememberMe.value);">
                 <div *ngIf="loading" class="loading-spinner">

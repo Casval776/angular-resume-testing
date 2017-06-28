@@ -1,0 +1,10 @@
+{
+  "/test-api/*": {
+    "target": "http://localhost:80/testapi",
+    "secure": false
+  },
+  "/token": {
+    "target": "http://localhost:80/testapi",
+    "secure": false
+  }
+}
