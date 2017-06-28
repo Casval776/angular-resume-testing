@@ -1,0 +1,58 @@
+<section class="sixth-w3ls">
+		<div class="container-fluid">
+      <div class="col-lg-3 col-md-3 col-sm-6"></div>
+			<div class="col-lg-6 col-md-6 col-sm-9 form-agile">
+				<div class="form-w3ls">
+					<h3>Login Forms</h3>
+					<ul class="tab-group cl-effect-4">
+						<li class="tab" [ngClass]="{ 'active': signIn == true }"><a (click)="signIn=true;">Login</a></li>	
+						<li class="tab" [ngClass]="{ 'active': signIn == false }"><a (click)="signIn=false;">Register</a></li>        
+					</ul>
+					<div class="tab-content">
+						<div id="signin-agile" *ngIf="signIn">   
+							<form (ngSubmit)="processLogin(username.value, password.value, rememberMe.value)" >
+				
+								<p class="header">User Name</p>
+								<input #username type="text" name="user" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}">
+				
+								<p class="header">Password</p>
+								<input #password type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+				
+								<input #rememberMe type="checkbox" id="brand" value="">
+								<label for="brand"><span></span> Remember me?</label>
+				
+								<input *ngIf="!loading" type="submit" class="sign-in" value="Submit" (click)="processLogin(username.value, password.value, rememberMe.value);">
+                <div *ngIf="loading" class="loading-spinner">
+                  <i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                  <span class="sr-only">Loading...</span>
+                  <h3>Loading...</h3>
+                </div>
+					
+							</form>
+						</div>
+						<div id="signup-agile" *ngIf="signIn == false;">   
+							<form action="#" method="post">
+				
+								<p class="header">User Name</p>
+								<input type="text" name="user" value="Your Full Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Full Name';}">
+				
+								<p class="header">Phone</p>
+								<input type="tel" name="phone" value="Your Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Phone Number';}">
+				
+								<p class="header">Email Address</p>
+								<input type="email" name="email" value="Email@address.com" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email@address.com';}">
+				
+								<p class="header">Password</p>
+								<input type="password" name="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+				
+								<p class="header">Confirm Password</p>
+								<input type="password" name="password" value="Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Confirm Password';}">
+				
+								<input type="submit" class="register" value="Register">
+							</form>
+						</div> 
+					</div><!-- tab-content -->
+				</div> <!-- /form -->	
+			</div>
+		</div>
+</section>
