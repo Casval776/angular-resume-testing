@@ -28,4 +28,8 @@ export class UserService {
   getUserName(): string{
     return this.user.Username;
   }
+
+  getUser(): User{
+    return this.user;
+  }
 }

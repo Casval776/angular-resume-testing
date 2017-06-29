@@ -232,7 +232,7 @@ section.banner-w3ls .carousel-caption p.text-center {
 /*-- /banner section --*/
 /*-- second section --*/
 section.second-w3ls {
-    padding: 50px 0;
+    padding: 25px 0;
 }
 .container-fluid {
 	padding-left:0;
@@ -244,7 +244,7 @@ section.second-w3ls {
 /*-- tabs section --*/
 section.second-w3ls .tabs {
     position: relative;
-    margin: 0px auto;
+    margin: 0px 0px;
     width: 100%;
 }
 section.second-w3ls .tabs input {

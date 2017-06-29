@@ -1,0 +1,16 @@
+.title-desc{
+    padding-left:2px;
+}
+.date-desc{
+    padding-right:0px;
+}
+.loading-text{
+    font-size:30px;
+    font-weight:bold;
+    padding-left:0px;
+    text-align:right;
+}
+.loading-icon{
+    padding-right:0px;
+    text-align:left;
+}

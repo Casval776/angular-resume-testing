@@ -8,10 +8,13 @@ import 'rxjs/add/observable/throw';
 import { UserService } from './user-service.service';
 
 import { User } from './user';
+import { BlogPost } from './blog-post';
 
 @Injectable()
 export class ApiService {
-  private apiUrl: string = "/test-api/api/user/login/";
+  private apiUrlLogin: string = '/api/user/login/';
+  private apiUrlLogout: string = '/api/user/logout/';
+  private apiUrlBlog: string = '/api/blog/';
   private header: Headers = new Headers({'Content-Type': 'application/json'});
 
   constructor(private userSvc: UserService,
@@ -23,7 +26,7 @@ export class ApiService {
     params.Password = password;
 
     return this.http
-              .post(this.apiUrl, JSON.stringify(params), {headers: this.header})
+              .post(this.apiUrlLogin, JSON.stringify(params), {headers: this.header})
               .map(res => {
                 let tmpToken: string = res.json().res;
                 if (tmpToken && tmpToken.length > 0){
@@ -35,6 +38,43 @@ export class ApiService {
                 return false;
               })
               .catch(this.catchError);
+  }
+
+  doLogout(){
+    return this.http
+              .post(this.apiUrlLogout, JSON.stringify(this.userSvc.getUser()), {headers: this.header})
+              .map(res => {
+                let success: boolean = res.json().res;
+                if (success && success === true){
+                  this.userSvc.userLoggedOut();
+                }
+                return success;
+              })
+              .catch(this.catchError);
+  }
+
+  getBlogPosts(post: BlogPost){
+    if (post){
+      //If a post was specified, do a post
+      return this.http
+                .post(this.apiUrlBlog, JSON.stringify(post), {headers: this.header})
+                .map(res => {
+                  let debug = res.json().res;
+                  //Debug
+                  debugger;
+                })
+                .catch(this.catchError);
+    } else {
+      //Else, do a get
+      return this.http
+                .get(this.apiUrlBlog, {headers: this.header})
+                .map(res => {
+                  let debug = res.json().res;
+                  //Debug
+                  debugger;
+                })
+                .catch(this.catchError);
+    }
   }
 
   private catchError(err: any){

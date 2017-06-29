@@ -13,6 +13,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
+import { BlogHomeComponent } from './blog-home/blog-home.component';
 
 //Model Imports
 import { appRoutes } from './router';
@@ -30,7 +31,8 @@ import { ApiService } from './api-service.service';
     AboutMeComponent,
     SocialMediaComponent,
     HomePageComponent,
-    LoginComponent
+    LoginComponent,
+    BlogHomeComponent
   ],
   imports: [
     BrowserModule,
