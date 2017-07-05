@@ -7,34 +7,33 @@
   </div>
 </div>
 
-<div class="container-fluid card">
+<div *ngFor="let posts of blogPosts" class="container-fluid card post-container">
 <!-- Blog entries -->
 <div class="col-md-12 card-block card-inverse">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
     <div class="col-md-2">
-    <img src="./../../assets/images/banner1.jpg" alt="Nature" style="width:100%">
+    <img src="./../../{{posts.ThumbnailImage}}" alt="Nature" style="width:100%">
     </div>
 
 
 <div class="col-md-10">
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
+      <h3><b>{{ posts.TitleHeading }}</b></h3>
       <div class="container-fluid">
-      <div class="col-md-6 title-desc"><h5>Title description,</h5></div> 
-      <div class="col-md-6 date-desc"><h5><p class="text-right">April 7, 2014</p></h5></div>
+      <div class="col-md-6 title-desc"><h5>{{ posts.TitleDescription }},</h5></div> 
+      <div class="col-md-6 date-desc"><h5><p class="text-right">{{ posts.PostedDate }}</p></h5></div>
       </div>
     </div>
 
     <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
+      <p>{{ posts.BlogBody }}</p>
+      <div class="container-fluid">
+        <div class="col-md-5">
           <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p class="text-right"><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        <div class="col-md-5">
+          <p class="text-right"><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">{{ posts.BlogComments }}</span></span></p>
         </div>
       </div>
     </div>

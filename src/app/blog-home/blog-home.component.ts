@@ -9,18 +9,18 @@ import { BlogPost } from './../blog-post';
   styleUrls: ['./blog-home.component.css']
 })
 export class BlogHomeComponent implements OnInit {
-  private posts: BlogPost[];
+  private blogPosts: BlogPost[];
   private preprocessLoading: boolean = true;
 
   constructor(private apiSvc: ApiService) { }
 
   ngOnInit() {
-    // this.apiSvc.getBlogPosts(null).subscribe(res => {
-    //   this.posts = res;
-    //   this.preprocessLoading = false;
-    //   //Debug
-    //   debugger;
-    // });
+    this.apiSvc.getBlogPosts(null).subscribe(res => {
+      this.blogPosts = res;
+      this.preprocessLoading = false;
+      //Debug
+      debugger;
+    });
   }
 
 }

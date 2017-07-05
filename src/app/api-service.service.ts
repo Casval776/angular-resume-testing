@@ -62,6 +62,7 @@ export class ApiService {
                   let debug = res.json().res;
                   //Debug
                   debugger;
+                  return debug;
                 })
                 .catch(this.catchError);
     } else {
@@ -72,6 +73,7 @@ export class ApiService {
                   let debug = res.json().res;
                   //Debug
                   debugger;
+                  return debug;
                 })
                 .catch(this.catchError);
     }
