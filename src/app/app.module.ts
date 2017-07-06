@@ -14,6 +14,7 @@ import { SocialMediaComponent } from './social-media/social-media.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
 import { BlogHomeComponent } from './blog-home/blog-home.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 //Model Imports
 import { appRoutes } from './router';
@@ -32,7 +33,8 @@ import { ApiService } from './api-service.service';
     SocialMediaComponent,
     HomePageComponent,
     LoginComponent,
-    BlogHomeComponent
+    BlogHomeComponent,
+    BlogDetailsComponent
   ],
   imports: [
     BrowserModule,

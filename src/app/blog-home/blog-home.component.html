@@ -17,12 +17,12 @@
     </div>
 
 
-<div class="col-md-10">
+<div class="col-md-10 body-container">
     <div class="w3-container">
       <h3><b>{{ posts.TitleHeading }}</b></h3>
       <div class="container-fluid">
       <div class="col-md-6 title-desc"><h5>{{ posts.TitleDescription }},</h5></div> 
-      <div class="col-md-6 date-desc"><h5><p class="text-right">{{ posts.PostedDate }}</p></h5></div>
+      <div class="col-md-6 date-desc"><h5><p class="text-right">{{ posts.DisplayDate }}</p></h5></div>
       </div>
     </div>
 
@@ -30,7 +30,7 @@
       <p>{{ posts.BlogBody }}</p>
       <div class="container-fluid">
         <div class="col-md-5">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border" (click)="navigateToPost(posts.ID);"><b>READ MORE »</b></button></p>
         </div>
         <div class="col-md-5">
           <p class="text-right"><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">{{ posts.BlogComments }}</span></span></p>

@@ -18,10 +18,17 @@
     padding-right:0px;
     padding-left:0px;
 }
+.col-md-2{
+    padding-right:0px;
+    padding-left:0px;
+}
 .post-container{
     padding-bottom:20px;
     background:white;
     padding-left:0px;
     padding-right:0px;
     background-clip: content-box;
+}
+.body-container{
+    height:100%;
 }

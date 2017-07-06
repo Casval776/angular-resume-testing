@@ -55,6 +55,7 @@ export class ApiService {
 
   getBlogPosts(post: BlogPost){
     if (post){
+      debugger;
       //If a post was specified, do a post
       return this.http
                 .post(this.apiUrlBlog, JSON.stringify(post), {headers: this.header})
@@ -71,8 +72,6 @@ export class ApiService {
                 .get(this.apiUrlBlog, {headers: this.header})
                 .map(res => {
                   let debug = res.json().res;
-                  //Debug
-                  debugger;
                   return debug;
                 })
                 .catch(this.catchError);
